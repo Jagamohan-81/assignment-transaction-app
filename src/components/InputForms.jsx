@@ -4,6 +4,7 @@ import { editTransaction, addTransaction } from "../store/transactionSlice";
 import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 import { Link } from "react-router-dom";
+import { fetchUSDRate } from "../store/transactionSlice";
 
 function InputForms({ initialValues, onClose }) {
   const dispatch = useDispatch();
@@ -39,6 +40,10 @@ function InputForms({ initialValues, onClose }) {
       alert("Add Data To Save");
     } else {
       dispatch(addTransaction(values));
+      const fetchRate = async () => {
+        dispatch(fetchUSDRate());
+      };
+      fetchRate();
       alert("Saved Successfully!");
       onClose();
     }
