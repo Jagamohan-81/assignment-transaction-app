@@ -13,6 +13,8 @@ Transaction App is a web application built using React that allows users to mana
 
 - **React**: Core library for building user interface components and managing app state.
 - **Redux and React-Redux**: State management library and integration with React components.
+- **Redux Persist**: Enables storing Redux state in local storage, ensuring persistence across sessions.
+- **Redux Thunk**: Middleware for handling asynchronous actions and side effects.
 - **React Router DOM**: Client-side routing for navigation within the app.
 - **Formik and Yup**: Simplifies form handling and provides form validation.
 - **Tailwind CSS**: Styling framework for responsive and visually appealing designs.
