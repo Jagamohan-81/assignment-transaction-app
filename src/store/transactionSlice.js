@@ -151,7 +151,7 @@ const transactionsSlice = createSlice({
   reducers: {
     addTransaction: (state, action) => {
       const newTransaction = action.payload;
-      console.log(newTransaction)
+      console.log(newTransaction);
       newTransaction.id = state.length;
       return [...state, newTransaction];
     },
@@ -189,7 +189,9 @@ const transactionsSlice = createSlice({
       const usdRate = action.payload;
 
       state.forEach((transaction) => {
-        transaction.usdEquivalent = (transaction.amount / usdRate).toFixed(2);
+        transaction.usdEquivalent = Number(
+          (transaction.amount / usdRate).toFixed(2)
+        );
       });
     });
   },
